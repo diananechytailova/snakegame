@@ -1,0 +1,15 @@
+/home/user/projects/snakegame/bin/Debug/net6.0/snakegame
+/home/user/projects/snakegame/bin/Debug/net6.0/snakegame.deps.json
+/home/user/projects/snakegame/bin/Debug/net6.0/snakegame.runtimeconfig.json
+/home/user/projects/snakegame/bin/Debug/net6.0/snakegame.dll
+/home/user/projects/snakegame/bin/Debug/net6.0/ref/snakegame.dll
+/home/user/projects/snakegame/bin/Debug/net6.0/snakegame.pdb
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.csproj.AssemblyReference.cache
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.GeneratedMSBuildEditorConfig.editorconfig
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.AssemblyInfoInputs.cache
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.AssemblyInfo.cs
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.csproj.CoreCompileInputs.cache
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.dll
+/home/user/projects/snakegame/obj/Debug/net6.0/ref/snakegame.dll
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.pdb
+/home/user/projects/snakegame/obj/Debug/net6.0/snakegame.genruntimeconfig.cache

@@ -1,2 +1,12 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using System;
+
+namespace snakegame 
+{
+    class Program
+    {    
+        static void Main()
+        {
+            VirtualScreen gameScreen = new VirtualScreen(10, 20, '*');
+        } 
+    }
+}
