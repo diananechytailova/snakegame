@@ -1,12 +1,11 @@
-﻿using System;
-
-namespace snakegame 
+﻿namespace Game 
 {
     class Program
     {    
         static void Main()
         {
-            VirtualScreen gameScreen = new VirtualScreen(10, 20, '*');
+            VirtualScreen gameScreen = new VirtualScreen(25, 80, ' ');
+            gameScreen.render();
         } 
     }
 }
