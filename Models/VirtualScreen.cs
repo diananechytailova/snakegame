@@ -1,3 +1,5 @@
+using Utilities;
+
 namespace Game 
 {
     public class VirtualScreen 
@@ -23,12 +25,17 @@ namespace Game
         {
             for(int height = 0; height <= this.screen.GetLength(0)-1; height++){
                 for (int width = 0; width <= this.screen.GetLength(1)-1; width++){
-                    Console.Write(this.screen[height, width]);
+                    Console.Write(this.screen[height, width].ToString() + " ");
                 } 
                 Console.Write("\n");
             }
         }
         
+        public void setPoint(Point coords, char symbol)
+        {
+            this.screen[coords.y, coords.x] = symbol;
+        }
+
         public char[,] getScreen() 
         {
             return this.screen;
