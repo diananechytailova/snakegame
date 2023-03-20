@@ -1,14 +1,15 @@
-﻿namespace Game 
-{
-    class Program
-    {    
-        static void Main()
-        {
-            VirtualScreen gameScreen = new VirtualScreen(21, 21, ' ');
-            Snake snake = new Snake(ref gameScreen);
+﻿namespace snakegame;
 
-            gameScreen.render();
-            snake.render();
-        } 
+using Objects;
+
+class Program
+{
+    static void Main()
+    {
+        VirtualScreen gameScreen = new VirtualScreen(21, 21);
+        Snake snake = new Snake(gameScreen);
+
+        snake.Render();
+        gameScreen.Render();
     }
 }
