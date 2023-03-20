@@ -25,11 +25,11 @@ public class VirtualScreen
 
     public void Render()
     {
-        for (int height = 0; height <= _screen.GetLength(0) - 1; height++)
+        for (int x = 0; x <= _screen.GetLength(0) - 1; x++)
         {
-            for (int width = 0; width <= _screen.GetLength(1) - 1; width++)
+            for (int y = 0; y <= _screen.GetLength(1) - 1; y++)
             {
-                Console.Write(_screen[height, width] + " ");
+                Console.Write(_screen[y, x] + " ");
             }
 
             Console.Write("\n");
@@ -44,6 +44,6 @@ public class VirtualScreen
 
     public void SetPoint(Point coords, char symbol)
     {
-        _screen[coords.Y, coords.X] = symbol;
+        _screen[coords.X - 1, coords.Y - 1] = symbol;
     }
 }

@@ -13,9 +13,10 @@ class Program
         while(true)
         {   
             gameScreen.Clear();
-            snake.Move();
+
             snake.Render();
             gameScreen.Render();
+            snake.Move();
 
             Thread.Sleep(1000);
         }
