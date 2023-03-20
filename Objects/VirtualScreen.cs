@@ -36,6 +36,12 @@ public class VirtualScreen
         }
     }
 
+    public void Clear()
+    {
+        _fill(' ');
+        Console.Clear();
+    }
+
     public void SetPoint(Point coords, char symbol)
     {
         _screen[coords.Y, coords.X] = symbol;

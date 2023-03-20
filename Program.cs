@@ -1,6 +1,7 @@
 ﻿namespace snakegame;
 
 using Objects;
+using System.Threading;
 
 class Program
 {
@@ -9,7 +10,14 @@ class Program
         VirtualScreen gameScreen = new VirtualScreen(21, 21);
         Snake snake = new Snake(gameScreen);
 
-        snake.Render();
-        gameScreen.Render();
+        while(true)
+        {   
+            gameScreen.Clear();
+            snake.Move();
+            snake.Render();
+            gameScreen.Render();
+
+            Thread.Sleep(1000);
+        }
     }
 }
