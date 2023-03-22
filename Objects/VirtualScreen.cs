@@ -4,9 +4,9 @@ using Utilities;
 
 public class VirtualScreen
 {
-    public VirtualScreen(int height, int width, char symbol = ' ')
+    public VirtualScreen(int sizeX, int sizeY, char symbol = ' ')
     {
-        _screen = new char[height, width];
+        _screen = new char[sizeX, sizeY];
         _fill(symbol);
     }
 
@@ -14,17 +14,29 @@ public class VirtualScreen
 
     private void _fill(char symbol)
     {
-        for (int height = 0; height <= _screen.GetLength(0) - 1; height++)
+        for (int x = 0; x <= _screen.GetLength(0) - 1; x++)
         {
-            for (int width = 0; width <= _screen.GetLength(1) - 1; width++)
+            for (int y = 0; y <= _screen.GetLength(1) - 1; y++)
             {
-                _screen[height, width] = symbol;
+                _screen[x, y] = symbol;
             }
         }
     }
 
     public void Render()
     {
+        for(int x = 0; x < _screen.GetLength(0); x++)
+        {
+            _screen[0, x] = '★';
+            _screen[_screen.GetLength(1) - 1, x] = '★';
+        }
+
+        for(int y = 0; y < _screen.GetLength(1); y++)
+        {
+            _screen[y, 0] = '★';
+            _screen[y, _screen.GetLength(0) - 1] = '★';
+        }
+
         for (int x = 0; x <= _screen.GetLength(0) - 1; x++)
         {
             for (int y = 0; y <= _screen.GetLength(1) - 1; y++)

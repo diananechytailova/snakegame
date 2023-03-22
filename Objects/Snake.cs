@@ -9,6 +9,7 @@ public class Snake : Renderable
         : base(screen)
     {
         //
+
     }
 
     private readonly char _symbol = '*';
@@ -45,23 +46,36 @@ public class Snake : Renderable
     public void Move()
     {
         Point head = _body.Last();
+        
+        _body.Add(GetNextPoint(head));
+        DeleteTail();
+    }
 
+    public Point GetNextPoint(Point head)
+    { 
         if (_direction == DIR_UP)
         {
-            _body.Add(new Point(head.X, head.Y - 1));
+            return new Point(head.X, head.Y - 1);
         }
         else if (_direction == DIR_DOWN)
         {
-            _body.Add(new Point(head.X, head.Y + 1));
+            return new Point(head.X, head.Y + 1);
         }
         else if (_direction == DIR_LEFT)
         {
-            _body.Add(new Point(head.X - 1, head.Y));
+            return new Point(head.X - 1, head.Y);
         }
         else if (_direction == DIR_RIGHT)
         {
-            _body.Add(new Point(head.X + 1, head.Y));
+            return new Point(head.X + 1, head.Y);
         }
+        
+        return new Point(1, 1);
+    }
+
+    public void DeleteTail()
+    {
+       _body.RemoveAt(0); 
     }
 }
     
