@@ -10,15 +10,22 @@ class Program
         VirtualScreen gameScreen = new VirtualScreen(21, 21);
         Snake snake = new Snake(gameScreen);
 
-        while(true)
-        {   
-            gameScreen.Clear();
+        try
+        {
+            while(true)
+            {  
+                gameScreen.Clear();
 
-            snake.Render();
-            gameScreen.Render();
-            snake.Move();
+                snake.Render();
+                gameScreen.Render();
+                snake.Move();
 
-            Thread.Sleep(1000);
+                Thread.Sleep(1000);
+            }
+        }
+        catch(Exception exception)
+        {
+            Console.WriteLine(exception);
         }
     }
 }

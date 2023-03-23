@@ -9,7 +9,6 @@ public class Snake : Renderable
         : base(screen)
     {
         //
-
     }
 
     private readonly char _symbol = '*';
@@ -46,8 +45,10 @@ public class Snake : Renderable
     public void Move()
     {
         Point head = _body.Last();
-        
-        _body.Add(GetNextPoint(head));
+        Point nextPoint = GetNextPoint(head);
+
+        Validate(nextPoint);
+        _body.Add(nextPoint);
         DeleteTail();
     }
 
@@ -77,5 +78,22 @@ public class Snake : Renderable
     {
        _body.RemoveAt(0); 
     }
-}
     
+    public void Validate(Point next)
+    {
+        Screen.ValidateBorder(next);
+        ValidateBody(next);
+    }
+
+    public void ValidateBody(Point next)
+    {
+        foreach (Point item in _body)
+        {
+            if(item.X == next.X && item.Y == next.Y)
+            {
+                throw new Exception("The snake crashed into itself \n:(");
+            }
+        }
+    }
+}
+  

@@ -6,11 +6,14 @@ public class VirtualScreen
 {
     public VirtualScreen(int sizeX, int sizeY, char symbol = ' ')
     {
+        SizeX = sizeX;
+        SizeY = sizeY;
         _screen = new char[sizeX, sizeY];
         _fill(symbol);
     }
 
     private readonly char[,] _screen;
+    public int SizeX, SizeY;
 
     private void _fill(char symbol)
     {
@@ -57,5 +60,17 @@ public class VirtualScreen
     public void SetPoint(Point coords, char symbol)
     {
         _screen[coords.X - 1, coords.Y - 1] = symbol;
+    }
+
+    public void ValidateBorder(Point next)
+    {
+        if(next.X < 1 || next.X > SizeX - 1)
+        {
+            throw new Exception("The Snake is out the field");
+        }
+        else if(next.Y < 1 || next.Y > SizeY - 1)
+        {
+            throw new Exception("The Snake is out the field");
+        }
     }
 }
