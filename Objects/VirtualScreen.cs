@@ -64,11 +64,11 @@ public class VirtualScreen
 
     public void ValidateBorder(Point next)
     {
-        if(next.X < 1 || next.X > SizeX - 1)
+        if(next.X <= 1 || next.X > SizeX - 1)
         {
             throw new Exception("The Snake is out the field");
         }
-        else if(next.Y < 1 || next.Y > SizeY - 1)
+        else if(next.Y <= 1 || next.Y > SizeY - 1)
         {
             throw new Exception("The Snake is out the field");
         }
