@@ -9,23 +9,36 @@ class Program
     {
         VirtualScreen gameScreen = new VirtualScreen(21, 21);
         Snake snake = new Snake(gameScreen);
+        Thread controls = new Thread(() => Controls(snake));
+
+        controls.Start();
 
         try
         {
-            while(true)
-            {  
+            while (true)
+            {
                 gameScreen.Clear();
 
                 snake.Render();
                 gameScreen.Render();
                 snake.Move();
 
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
         }
-        catch(Exception exception)
+        catch (Exception exception)
         {
             Console.WriteLine(exception);
+            Environment.Exit(0);
+        }
+    }
+
+    public static void Controls(Snake snake)
+    {
+        while (true)
+        {
+            new Controller(snake).ReadKey();
+            Thread.Sleep(1);
         }
     }
 }

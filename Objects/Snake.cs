@@ -20,12 +20,12 @@ public class Snake : Renderable
         new(3, 5),
     };
 
-    private const string DIR_UP = "dir up";
-    private const string DIR_DOWN = "dir down";
-    private const string DIR_LEFT = "dir left";
-    private const string DIR_RIGHT = "dir right";
+    public const string DIR_UP = "dir up";
+    public const string DIR_DOWN = "dir down";
+    public const string DIR_LEFT = "dir left";
+    public const string DIR_RIGHT = "dir right";
 
-    private string _direction = DIR_DOWN;
+    public string Direction = DIR_DOWN;
 
     public void Render()
     {
@@ -40,6 +40,7 @@ public class Snake : Renderable
                 Screen.SetPoint(item, _symbol);
             }
         }
+
     }
 
     public void Move()
@@ -54,19 +55,19 @@ public class Snake : Renderable
 
     public Point GetNextPoint(Point head)
     { 
-        if (_direction == DIR_UP)
+        if (Direction == DIR_UP)
         {
             return new Point(head.X, head.Y - 1);
         }
-        else if (_direction == DIR_DOWN)
+        else if (Direction == DIR_DOWN)
         {
             return new Point(head.X, head.Y + 1);
         }
-        else if (_direction == DIR_LEFT)
+        else if (Direction == DIR_LEFT)
         {
             return new Point(head.X - 1, head.Y);
         }
-        else if (_direction == DIR_RIGHT)
+        else if (Direction == DIR_RIGHT)
         {
             return new Point(head.X + 1, head.Y);
         }
