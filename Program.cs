@@ -8,7 +8,8 @@ class Program
     static void Main()
     {
         VirtualScreen gameScreen = new VirtualScreen(21, 21);
-        Snake snake = new Snake(gameScreen);
+        Apple apple = new Apple(gameScreen);
+        Snake snake = new Snake(gameScreen, apple);
         Thread controls = new Thread(() => Controls(snake));
 
         controls.Start();
@@ -21,9 +22,9 @@ class Program
 
                 snake.Move();
                 snake.Render();
+                apple.Render();
                 gameScreen.Render();
                 
-
                 Thread.Sleep(500);
             }
         }

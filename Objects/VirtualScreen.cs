@@ -73,4 +73,9 @@ public class VirtualScreen
             throw new Exception("The Snake is out the field");
         }
     }
+
+    public char GetPoint(Point coordinates)
+    {
+        return _screen[coordinates.X, coordinates.Y];
+    }
 }

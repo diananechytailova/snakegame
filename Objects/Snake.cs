@@ -5,12 +5,13 @@ using System.Collections.Generic;
 
 public class Snake : Renderable
 {
-    public Snake(VirtualScreen screen)
+    public Snake(VirtualScreen screen, Apple apple)
         : base(screen)
     {
-        //
+        _apple = apple;
     }
 
+    private Apple _apple; 
     private readonly char _symbol = '*';
 
     private readonly List<Point> _body = new List<Point>()
@@ -40,7 +41,6 @@ public class Snake : Renderable
                 Screen.SetPoint(item, _symbol);
             }
         }
-
     }
 
     public void Move()
@@ -50,7 +50,14 @@ public class Snake : Renderable
 
         Validate(nextPoint);
         _body.Add(nextPoint);
-        DeleteTail();
+        if(!_apple.IsEaten(nextPoint))
+        {
+            DeleteTail();
+        }
+        else
+        {
+            _apple.Spawn();
+        }
     }
 
     public Point GetNextPoint(Point head)

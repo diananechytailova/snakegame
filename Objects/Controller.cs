@@ -1,7 +1,5 @@
 namespace snakegame.Objects;
 
-using System.Windows.Input;
-
 public class Controller
 {
     public Controller(Snake snake)
