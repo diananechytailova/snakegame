@@ -41,14 +41,14 @@ public class Apple : Renderable
     {
         Random rand = new Random();
         Point coordinates = new Point(
-            rand.Next(1, Screen.SizeX - 2), 
-            rand.Next(1, Screen.SizeY - 2)
+            rand.Next(2, Screen.SizeX - 3), 
+            rand.Next(2, Screen.SizeY - 3)
         );
 
         while(Screen.GetPoint(coordinates) != ' ')
         {
-            coordinates.X = rand.Next(1, Screen.SizeX - 2);
-            coordinates.Y = rand.Next(1, Screen.SizeY - 2); 
+            coordinates.X = rand.Next(2, Screen.SizeX - 3);
+            coordinates.Y = rand.Next(2, Screen.SizeY - 3); 
         }
 
         return coordinates;

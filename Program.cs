@@ -24,6 +24,7 @@ class Program
                 snake.Render();
                 apple.Render();
                 gameScreen.Render();
+                Console.WriteLine("x: " + apple.Coordinates.X + " y: " + apple.Coordinates.Y);
                 
                 Thread.Sleep(500);
             }
